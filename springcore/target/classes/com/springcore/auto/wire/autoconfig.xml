@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans 
+xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans.xsd
+           http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<bean class="com.springcore.auto.wire.Address" name="address">
+		<property name="street" value="chandwad" />
+			
+		<property name="city" value="nashik" />
+	</bean>
+	
+	<bean class="com.springcore.auto.wire.Address" name="address1">
+		<property name="street" value="peth" />
+			
+		<property name="city" value="pune" />
+	</bean>
+	
+	<!-- This is our second Bean. -->
+	<!-- Autowire by name -->
+	<!-- Here the name of name i.e. "address" is same as object name present in Emp class i.e. "address" -->
+	<!-- <bean class="com.springcore.auto.wire.Emp" name="emp1" autowire="byName" /> -->
+	
+	<!-- Autowire by type -->
+	<!-- Here the name of name is different as object name present in Emp class i.e. "address" -->
+	<!-- <bean class="com.springcore.auto.wire.Emp" name="emp1" autowire="byType" /> -->
+	
+	<!-- Autowire by constructor -->
+	<!-- Here the name of "address" constructor call -->
+	<bean class="com.springcore.auto.wire.Emp" name="emp1" autowire="constructor" />
+</beans>
